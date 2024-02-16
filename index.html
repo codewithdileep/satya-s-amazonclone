@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="website">
+        <header>
+            <div class="navbar">
+                <div class="nav-logo-container">
+                    <div class="logo">
+                        <img src="https://res.cloudinary.com/dcxmdgjwb/image/upload/v1703291475/amazon_logo_lifqtw.png" alt="amazon-logo" class="img-amazon">
+                    </div>
+                </div>
+                <div class="location">
+                    <div class="loc-logo">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="loc-info">
+                        <p class="top">Deliver to</p>
+                        <p class="bottom">India</p>
+                    </div>
+                </div>
+                <div class="nav-searchbar">
+                    <select name="all" id="all" class="search-option">
+                        <option value="All">All</option>
+                    </select>
+
+                    <input type="text" name="search" placeholder="Search Amazon" id="search" class="textbox-bar">
+
+                    <div class="searchbar-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <div class="nav-language">
+                    <div class="img-us">
+                        <img src="data:image/png;base64,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" alt="" class="us-img">
+                    </div>
+                    <div class="en-lang">
+                        <p class="en">EN</p>
+                    </div>
+                    <select name="" id="" class="small-icon">
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="nav-signin">
+                    <p class="hello">Hello, sign in</p>
+                    <div class="nav-row">
+                        <p class="acc">Account & Lists</p>
+                    <select name="" id="" class="small-icon">
+                        <option value=""></option>
+                    </select>
+                    </div>
+                </div>
+                <div class="nav-returnsandorders">
+                    <p class="hello">Returns</p>
+                    <p class="acc">& Orders</p>
+                </div>
+                <div class="nav-cart">
+                    <i class="fa-sharp fa-solid fa-cart-plus omg"></i>
+                    <p class="omg2">Cart</p>
+                </div>
+            </div>
+            <div class="sub-nav">
+                <div class="sub-nav-left">
+                    <div class="sub-menu">
+                        <i class="fa-solid fa-bars sub-1"></i>
+                        <p class="sub-2">All</p>
+                    </div>
+                    <div class="deals">
+                        <p>Today's Deals</p>
+                    </div>
+                    <div class="registry">
+                        <p>Registry</p>
+                    </div>
+                    <div class="customer-service">
+                        <p>Customer Service</p>
+                    </div>
+                    <div class="gift-cards">
+                        <p>Gift Cards</p>
+                    </div>
+                    <div class="sell">
+                        <p>Sell</p>
+                    </div>
+                </div>
+                <div class="sub-nav-right">
+                    <div class="electronics">
+                        Shop Deals in Electronics
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- main content starts from here -->
+            <div class="mainbody">
+                <div class="scroll-left scroll">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="scroll-right scroll">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="mainbody-message">
+                    <div class="message-1">
+                        <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery.</p>
+                    </div>
+                    <div class="message-2">
+                        <a href="https://www.amazon.in/?ref=aisgw_intl_stripe_in" class="amazon-in"> Click here to go to amazon.in</a>
+                    </div>
+                </div>
+                <!-- first 2 boxes covers in here -->
+                <div class="cute-boxes">
+                    <div class="box-row1">
+                        <div class="box box11">
+                            <p class="box-head">Gaming accessories</p>
+                            <div class="twin-boxes1">
+                                <div class="squarebox1">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Headset_1x._SY116_CB667159060_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Headsets</p>
+                                </div>
+                                <div class="squarebox2">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Keyboard_1x._SY116_CB667159063_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Keyboards</p>
+                                </div>
+                            </div>
+                            <div class="twin-boxes2">
+                                <div class="squarebox1">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Mouse_1x._SY116_CB667159063_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Computer mice</p>
+                                </div>
+                                <div class="squarebox2">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Chair_1x._SY116_CB667159060_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Chairs</p>
+                                </div>
+                            </div>
+                            <div class="box-bottom">
+                                <a href=""  class="see-more">See more</a>
+                            </div>
+                        </div>
+                        <div class="box box21">
+                            <div class="box-head">
+                                <p>Toys under $25</p>
+                            </div>
+                            <div class="box-img" style="background-image: url('https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_1x_v3._SY304_CB573698005_.jpg');">
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">Shop now</a>
+                            </div>
+                        </div>
+                        <div class="box box31">
+                            <div class="box-head">
+                                <p>Deals in PCs</p>
+                            </div>
+                            <div class="box-img" style="background-image: url('https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_1x_v1._SY304_CB573698005_.jpg');">
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">Shop now</a>
+                            </div>
+                        </div>
+                        <div class="box box41">
+                            <p class="box-head">Refresh your space</p>
+                            <div class="twin-boxes1">
+                                <div class="squarebox1">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/launchpad/2023/Gateway/January/DesktopQuadCat_186x116_LP-HP_B08MYX5Q2W_01.23._SY116_CB619238939_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Dining</p>
+                                </div>
+                                <div class="squarebox2">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/launchpad/2023/Gateway/January/DesktopQuadCat_186x116_home_B08RCCP3HV_01.23._SY116_CB619238939_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Home</p>
+                                </div>
+                            </div>
+                            <div class="twin-boxes2">
+                                <div class="squarebox1">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/launchpad/2023/Gateway/January/DesktopQuadCat_186x116_kitchen_B0126LMDFK_01.23._SY116_CB619238939_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Kitchen</p>
+                                </div>
+                                <div class="squarebox2">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/launchpad/2023/Gateway/January/DesktopQuadCat_186x116_health-beauty_B07662GN57_01.23._SY116_CB619238939_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Health and Beauty</p>
+                                </div>
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">See more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-row2 box-margin-minus">
+                        <div class="box box12">
+                            <div class="box-head">
+                                <p>Top Deal</p>
+                            </div>
+                            <div class="topdeal">
+                                <div class="topdealimg" style="background-image: url('https://m.media-amazon.com/images/I/31fCpQNAjRL._AC_SY230_.jpg');">
+                                </div>
+                                <div class="middletextbox">
+                                    <div class="middletextbox1">
+                                        Up to 49% off
+                                    </div>
+                                    <div class="middletextbox2">
+                                        Top Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 13px;margin-top: 2px;">d'Alba piedmont White Truffle Skincare</p>
+                            </div>
+                            <div class="box-bottom" style="margin-top: 30px;">
+                                <a href="" style="color: #007185; text-decoration: none;">See all details</a>
+                            </div>
+                        </div>
+                        <div class="box box22">
+                            <div class="box-head">
+                                <p>Beauty steals under $25</p>
+                            </div>
+                            <div class="box-img" style="background-image: url('https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_1x_v5._SY304_CB573698005_.jpg');">
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">Shop now</a>
+                            </div>
+                        </div>
+                        <div class="box box32">
+                            <p class="box-head">Refresh your space</p>
+                            <div class="twin-boxes1">
+                                <div class="squarebox1">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2023/LuxuryStores/Spring-23/GW/Quad_Cards/Spring/LSS23_SPRING_DT_CAT_CARD_2_x1._SY116_CB595261253_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Dresses</p>
+                                </div>
+                                <div class="squarebox2">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2023/LuxuryStores/Spring-23/GW/Quad_Cards/Spring/LSS23_SPRING_DT_CAT_CARD_3_x1._SY116_CB595261253_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Knits</p>
+                                </div>
+                            </div>
+                            <div class="twin-boxes2">
+                                <div class="squarebox1">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2023/LuxuryStores/Spring-23/GW/Quad_Cards/Spring/LSS23_SPRING_DT_CAT_CARD_1_x1._SY116_CB595261253_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Jackets</p>
+                                </div>
+                                <div class="squarebox2">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2023/LuxuryStores/Spring-23/GW/Quad_Cards/Spring/LSS23_SPRING_DT_CAT_CARD_4_x1._SY116_CB595261253_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Jewelry</p>
+                                </div>
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">Explore more</a>
+                            </div>
+                        </div>
+                        <div class="box box42">
+                            <div class="box-head">
+                                <p>New year, now </p>
+                            </div>
+                            <div class="box-img" style="background-image: url('https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2023/NYNY/Fuji_NYNY_Card_1x_12_Dec_EN._SY304_CB586552015_.jpg');">
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">Shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- This is "Best Sellers in Books" List -->
+                <div class="scrolling-list">
+                    <div class="scroll-head">
+                        <p>Best Sellers in Books</p>
+                    </div>
+                    <div class="wrapper">
+                        <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/81YkqyaFVEL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemb" style="background-image: url('https://m.media-amazon.com/images/I/81X7rAcaQkL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemc" style="background-image: url('https://m.media-amazon.com/images/I/91n7p-j5aqL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemd" style="background-image: url('https://m.media-amazon.com/images/I/917Bc9C1MlL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="iteme" style="background-image: url('https://m.media-amazon.com/images/I/913KWawg9gL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemf" style="background-image: url('https://m.media-amazon.com/images/I/81FS3wyevDL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemg" style="background-image: url('https://m.media-amazon.com/images/I/71CaU+HWrXL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemh" style="background-image: url('https://m.media-amazon.com/images/I/91+n898xBqL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemi" style="background-image: url('https://m.media-amazon.com/images/I/81uQRVpi2UL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemj" style="background-image: url('https://m.media-amazon.com/images/I/811HITbWChL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemk" style="background-image: url('https://m.media-amazon.com/images/I/81RrEEMiOCL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="iteml" style="background-image: url('https://m.media-amazon.com/images/I/91jbHTNpy6L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemm" style="background-image: url('https://m.media-amazon.com/images/I/7172yvl-xPL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemn" style="background-image: url('https://m.media-amazon.com/images/I/71CX11nGhWL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemo" style="background-image: url('https://m.media-amazon.com/images/I/71dQACXhz6L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemp" style="background-image: url('https://m.media-amazon.com/images/I/A1YhM3oRFbL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemq" style="background-image: url('https://m.media-amazon.com/images/I/81AHTyq2wVL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemr" style="background-image: url('https://m.media-amazon.com/images/I/71TRUbzcvaL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="items" style="background-image: url('https://m.media-amazon.com/images/I/71nKtAPngQL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemt" style="background-image: url('https://m.media-amazon.com/images/I/71X9FMy66NL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemu" style="background-image: url('https://m.media-amazon.com/images/I/61XUtQ7NTgL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemv" style="background-image: url('https://m.media-amazon.com/images/I/71tJuYvzc2L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemw" style="background-image: url('https://m.media-amazon.com/images/I/71PFp5FWpHL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemx" style="background-image: url('https://m.media-amazon.com/images/I/81Gmg86Z9PL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemy" style="background-image: url('https://m.media-amazon.com/images/I/81Gvt3v-J3L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemz" style="background-image: url('https://m.media-amazon.com/images/I/71W5-2NdNsL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemaa" style="background-image: url('https://m.media-amazon.com/images/I/91r00c80xuL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemab" style="background-image: url('https://m.media-amazon.com/images/I/61l5e5KUSfL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemac" style="background-image: url('https://m.media-amazon.com/images/I/91qXDU9TXvL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemad" style="background-image: url('https://m.media-amazon.com/images/I/81BE7eeKzAL._AC_SY200_.jpg');background-position: center center;"></div>
+                    </div>
+                </div>
+                <!-- This is "Best Sellers in Gornmets and Groceries" List -->
+                <div class="scrolling-list">
+                    <div class="scroll-head">
+                        <p>Best Sellers in Grocery & Gourmet Food</p> 
+                    </div>
+                    <div class="wrapper">
+                        <div class="item-i" style="background-image: url('https://m.media-amazon.com/images/I/61J0e7d0GEL._AC_SY200_.jpg');background-position: center center; background-size: cover;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/81GhgLpq6iL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/81M-Ge+er8L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-d" style="background-image: url('https://m.media-amazon.com/images/I/71tX1irZ1ML._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/81mm70fmJ+L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-i" style="background-image: url('https://m.media-amazon.com/images/I/61s3oyEy-0L._AC_SY200_.jpg');background-position: center center; background-size: cover;"></div>
+                        <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/71scVzee-zL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-g" style="background-image: url('https://m.media-amazon.com/images/I/71OJ9NQfrXL._AC_SY200_.jpg');background-position: center center; background-size: cover;"></div>
+                        <div class="itemi" style="background-image: url('https://m.media-amazon.com/images/I/71a1TpxDVOL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-g" style="background-image: url('https://m.media-amazon.com/images/I/81UWYRujCiL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/81ckgHGO3WL._AC_SY200_.jpg');background-position: center center; background-size: cover;"></div>
+                        <div class="item-i" style="background-image: url('https://m.media-amazon.com/images/I/71HUNCsDlaL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-gg" style="background-image: url('https://m.media-amazon.com/images/I/61jxQzdcTXS._AC_SY200_.jpg');background-position: center center;"></div>
+                    </div>
+                </div>
+                <!-- Third row boxes is coverered  here -->
+                <div class="cute-boxes">
+                    <div class="box-row3 box-margin-minus">
+                        <div class="box box13">
+                            <div class="box-head">
+                                <p>A whole new way to work</p>
+                            </div>
+                            <div class="box-img" style="background-image: url('https://images-na.ssl-images-amazon.com/images/G/01/US-hq/2023/img/Consumer_Electronics/XCM_CUTTLE_1622892_3373436_379x304_1X_en_US._SY304_CB597161294_.jpg');">
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">Shop personal computers</a>
+                            </div>
+                        </div>
+                        <div class="box box23">
+                            <div class="box-head">
+                                <p>Laptops for every need</p>
+                            </div>
+                            <div class="box-img" style="background-image: url('https://images-na.ssl-images-amazon.com/images/G/01/us-manual-merchandising/XCM_CUTTLE_1622894_3373440_379x304_1X_en_size1_US._SY304_CB597469214_.jpg');">
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">Find your laptop here</a>
+                            </div>
+                        </div>
+                        <div class="box box33">
+                            <div class="box-head">
+                                <p>Personal Care under $25</p>
+                            </div>
+                            <div class="box-img" style="background-image: url('https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_1x_v10._SY304_CB573698005_.jpg');">
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">See more</a>
+                            </div>
+                        </div>
+                        <div class="box box43">
+                            <div class="box-head">
+                                <p>Upgrade your office furniture</p>
+                            </div>
+                            <div class="box-img" style="background-image: url('https://images-na.ssl-images-amazon.com/images/G/01/dex/2023/Roar/October/D_CC_Roar_OfficeDepot_1023_1X_Furnitrure_v2._SY304_CB577544739_.jpg');">
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">Shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- This i.s "Best Sellers in Sports and Outdoors" List -->
+                <div class="scrolling-list">
+                    <div class="scroll-head">
+                        <div class="scrollhead1">
+                            <p>Best Sellers in Sports & Outdoors</p>
+                        </div> 
+                    </div>
+                    <div class="wrapper">
+                        <!-- 1 -->
+                        <div class="item-aa" style="background-image: url('https://m.media-amazon.com/images/I/81Y26toqdTL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/817U5N6rypL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-ggg" style="background-image: url('https://m.media-amazon.com/images/I/71-P2+J2RQL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-c" style="background-image: url('https://m.media-amazon.com/images/I/41cLCgyBbaL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-i" style="background-image: url('https://m.media-amazon.com/images/I/81MfOTcByXL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <!-- 5 -->
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/81+D8FkHLXL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-h" style="background-image: url('https://m.media-amazon.com/images/I/610GhgA90CL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/81ARh719W9L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemm" style="background-image: url('https://m.media-amazon.com/images/I/61gFrSlmofL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemcc" style="background-image: url('https://m.media-amazon.com/images/I/61k32BKmjQL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <!-- 10 -->
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/71bbUcCQd7L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/71Mw-1nqyiL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-n" style="background-image: url('https://m.media-amazon.com/images/I/616L47yQi5L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-ggh" style="background-image: url('https://m.media-amazon.com/images/I/71j-NTcp5ML._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-gggg" style="background-image: url('https://m.media-amazon.com/images/I/71JJ1ow-GHL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <!-- 15 -->
+                        <div class="item-f" style="background-image: url('https://m.media-amazon.com/images/I/61ZLEHX1FsL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-g" style="background-image: url('https://m.media-amazon.com/images/I/61+UlXddzxL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemj" style="background-image: url('https://m.media-amazon.com/images/I/61ZtqtvoD2L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-lm" style="background-image: url('https://m.media-amazon.com/images/I/61o-S9nV2kL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-195" style="background-image: url('https://m.media-amazon.com/images/I/71wm42EtoNL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <!-- 20 -->
+                        <div class="item-n" style="background-image: url('https://m.media-amazon.com/images/I/71cSLFE39zL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/61vNQX1dyML._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-ee" style="background-image: url('https://m.media-amazon.com/images/I/71wwR5zim1L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-n" style="background-image: url('https://m.media-amazon.com/images/I/31hti-mM4lL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-ll" style="background-image: url('https://m.media-amazon.com/images/I/71ssIG3SZ1L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-390" style="background-image: url('https://m.media-amazon.com/images/I/813m6ClZf8L._AC_SY200_.jpg');background-position: center center;"></div>
+                    </div>
+                </div>
+                <!-- This is "Deals under $25" List -->
+                <div class="scrolling-list0">
+                    <div class="scroll-head">
+                        <div class="scrollhead1">
+                            <p>Deals Under $25</p>
+                        </div> 
+                        <div class="scrollhead2">
+                            <a href="" class="scrollhead2">See more</a>
+                        </div>
+                    </div>
+                    <div class="wrapper0">
+                        <div class="offerdeal">
+                            <div class="offerimg">
+                                <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/41ffl6Ji1SL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        41% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">8.96</span> ($0.07 / Count) <span style="color: rgb(137, 130, 130);">List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$15.19</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Doctor's Best MSM with OptiMSM, No...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="itemccc" style="background-image: url('https://m.media-amazon.com/images/I/31jhHy6sT4L._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        7% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">13.93</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$14.99</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Whiskware Pancake Batter Bottle with...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/41T0EUIchRL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        33% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">18.07</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$27.00</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">The Courage to Be Disliked: The japan...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/51n7o7BKu9L._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        33% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">9.99</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$14.98</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">The Book of Unusual Knowledge</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/51p4G0bi6dL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        50% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">17.50</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$35.00</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Heirloom Rooms: Soulful Stories H...</p>
+                            </div>
+                        </div>
+                        <!-- 5 -->
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="item-ee" style="background-image: url('https://m.media-amazon.com/images/I/41LeSKFGiqL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        20% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">10.39</span> ($2.60 / Count) <span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$12.99</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Philips LED Flikker-Free Frosted Dimm...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/41JXXRSzJcL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        25% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">22.72</span> ($0.25 / Count) <span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$30.29</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Solger Essential Amino Complex, 90 V...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/41aUjJ9bp0L._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        15% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">16.07</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$18.99</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Expert Secrets: The Underground Play...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/517bNKZy+WL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        24% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">21.27</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$28.00</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Complete Spanish Step-by-Step, Pre...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="itemj" style="background-image: url('https://m.media-amazon.com/images/I/41Fx86DEs8L._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        31% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">22.99</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$33.50</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Protective Covers Weatherproof Wicke...</p>
+                            </div>
+                        </div>
+                        <!-- 10 -->
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/51Ba7y0PDqL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        29% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">17.77</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$27.98</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Arthur / Arthur 2: On the Rocks (2-Mo...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/41d7UX4WjCL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        32% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">18.97</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$28.00</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Conversations on Love: Lovers, Strang...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="item-ee" style="background-image: url('https://m.media-amazon.com/images/I/41ydKjLGxoL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        20% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">11.19</span> ($2.80 / Count) <span style="color: rgb(137, 130, 130);">List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$13.99</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Philips LED Flicker-Free Frosted Dimm...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="itemccc" style="background-image: url('https://m.media-amazon.com/images/I/41Pil2ZPQsL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        7% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">8.18</span> ($0.27 / Count) <span style="color: rgb(137, 130, 130);">Was:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$8.84</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Life Extension Bio-Quercetin, Suport...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="itemd" style="background-image: url('https://m.media-amazon.com/images/I/41M1xFn1rIL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        50% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">13.49</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$26.99</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">The Evangelical Imagination: How Stor...</p>
+                            </div>
+                        </div>
+                        <!-- 15 -->
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="item90" style="background-image: url('https://m.media-amazon.com/images/I/41GabbDKPoL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        24% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">7.00</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$9.25</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Copperstone SPORT Sunscreen SPF...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="item-i" style="background-image: url('https://m.media-amazon.com/images/I/41MkfHjRkgL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        36% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">15.59</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$24.49</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Brother Extra Strength Adhesive Tape...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="item-ee" style="background-image: url('https://m.media-amazon.com/images/I/51BKhOr8nzL._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        25% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">13.39</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$17.99</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Cat Shaming 2024 Day-to-Day Cal...</p>
+                            </div>
+                        </div>
+                        <div class="offerdeal">
+                            <div class="offerimg0">
+                                <div class="item-eh" style="background-image: url('https://m.media-amazon.com/images/I/11cHw5F2M9L._AC_SY200_.jpg');background-position: center center;"></div>
+                            </div>
+                            <div class="offerdata0">
+                                <div class="middletextbox">
+                                    <div class="redbox">
+                                        40% off
+                                    </div>
+                                    <div class="redtext">
+                                        Deal
+                                    </div>
+                                </div>
+                                <p style="color: black;font-size: 12px;margin-top: 8px;">$<span style="font-size: 16px;">17.99</span><span style="color: rgb(137, 130, 130);"> List Price:</span><span style="text-decoration: line-through;color: rgb(65, 64, 64);">$29.99</span></p>
+                                <p style="font-size: 13px; margin-top: 6px;">Fiskars 390470-1002 Power Tooth Sof...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fourth Row of the Box is covered here -->
+                <div class="cute-boxes">
+                    <div class="box-row4 box-margin-minus">
+                        <div class="box box14">
+                            <div class="box-head">
+                                <p>Deals on shoes</p>
+                            </div>
+                            <div class="box-img" style="background-image: url('https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_1x_v8._SY304_CB573698005_.jpg');">
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">See more</a>
+                            </div>
+                        </div>
+                        <div class="box box24">
+                            <div class="box-head">
+                                <p>Player's paradise starts here</p>
+                            </div>
+                            <div class="box-img" style="background-image: url('https://images-na.ssl-images-amazon.com/images/G/01/US-hq/2023/img/Consumer_Electronics/XCM_CUTTLE_1546843_2940864_379x304_1X_en_US._SY304_CB613273467_.jpg');">
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">Shop video games</a>
+                            </div>
+                        </div>
+                        <div class="box box34">
+                            <div class="box-head">
+                                <p>Creating business solutions</p>
+                            </div>
+                            <div class="box-img" style="background-image: url('https://images-na.ssl-images-amazon.com/images/G/01/us-manual-merchandising/RBS-in-house-Graphics/cc_359_laptop_us_v1._SY304_CB576754001_.jpg');">
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">See more software products</a>
+                            </div>
+                        </div>
+                        <div class="box box44">
+                            <p class="box-head">Warm & welcoming decor</p>
+                            <div class="twin-boxes1">
+                                <div class="squarebox1">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/img22/Events/Fall23/FALL23_Oct_Wreaths_Decor_QuadCard_D_01_186x116._SY116_CB596234042_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Wreaths and garlands</p>
+                                </div>
+                                <div class="squarebox2">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/img22/Events/Fall23/FALL23_HP_Oct_Decor_QuadCard_D_03_186x116._SY116_CB596234042_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Outdoor decor</p>
+                                </div>
+                            </div>
+                            <div class="twin-boxes2">
+                                <div class="squarebox1">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/img22/Events/Fall23/FALL23_Oct_Pillows_Decor_QuadCard_D_02_186x116._SY116_CB596234042_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Pillows and throws</p>
+                                </div>
+                                <div class="squarebox2">
+                                    <div class="imgboxmini" style="background-image:url('https://images-na.ssl-images-amazon.com/images/G/01/img22/Events/Fall23/FALL23_HP_Oct_Decor_QuadCard_D_04_186x116._SY116_CB596234042_.jpg');background-position: center center;">
+                                    </div>
+                                    <p style="font-size: 12px;">Wall art and mirrors</p>
+                                </div>
+                            </div>
+                            <div class="box-bottom">
+                                <a href="" style="color: #007185; text-decoration: none;">Explore more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- This is "Most Wished for in Movies & TV" List -->
+                <div class="scrolling-list">
+                    <div class="scroll-head">
+                        <p>Most wished for in Movies & TV</p>
+                    </div>
+                    <div class="wrapper">
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/71e2wPp93EL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81FNwflBEbL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81biiIq1mcL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/71h7HHb9lIL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81+JRa6G+3L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/71EiFp3q84L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/61BHHKpdIYL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81-xkYB2izL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/71dC5n14O4L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/61RHfBsUIpL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/717mzNpA9HL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81XIwWSZ6bL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81tfKiNfztL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81w6IGFnj6L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/810BDzZzIxL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81NAm5I66VL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/71mPJqAbuaL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81tcxcJhBvL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/714YRh0z-GL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/71d2cyoG2+L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81sW-rVoKvL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81TDrThnEcL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/91C8DfTZ7yL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/71JB+qugXPL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81xTZn3VGSL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81iLHAGLL9L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81DJvTBBdzL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/719glntM8aL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/91ty226QS8L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/9139RIJAseL._AC_SY200_.jpg');background-position: center center;"></div>
+                    </div>
+                </div>
+                <!-- This is "Best Sellers in Computers and Accessories" List -->
+                <div class="scrolling-list">
+                    <div class="scroll-head">
+                        <p>Best Sellers in Computers and Accessories</p> 
+                    </div>
+                    <div class="wrapper">
+                        <div class="itema" style="background-image: url('https://m.media-amazon.com/images/I/61GTWnWgCHL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-f" style="background-image: url('https://m.media-amazon.com/images/I/71QPduoKd1L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-jj" style="background-image: url('https://m.media-amazon.com/images/I/51HbD2W7FtL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-d" style="background-image: url('https://m.media-amazon.com/images/I/610lABRzuuL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-ll" style="background-image: url('https://m.media-amazon.com/images/I/61re+ymFgcL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-j" style="background-image: url('https://m.media-amazon.com/images/I/71rAlnvFHoL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-mm" style="background-image: url('https://m.media-amazon.com/images/I/71nVIiWEcgL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-jj" style="background-image: url('https://m.media-amazon.com/images/I/51IFiSD+kCL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-h" style="background-image: url('https://m.media-amazon.com/images/I/61ZGsavfynL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemc" style="background-image: url('https://m.media-amazon.com/images/I/41gTIFgAiQL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-e" style="background-image: url('https://m.media-amazon.com/images/I/51MiG9+u4lL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/710SEbFmPuL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-b" style="background-image: url('https://m.media-amazon.com/images/I/71p+P8mZ3RL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-n" style="background-image: url('https://m.media-amazon.com/images/I/51A2y8WC7mL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/51jd6JrnPrL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item" style="background-image: url('https://m.media-amazon.com/images/I/81OFxhFWmML._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-n" style="background-image: url('https://m.media-amazon.com/images/I/61zax7LW1CL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemc" style="background-image: url('https://m.media-amazon.com/images/I/71YnvIEkWwL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/51cpWg2Ay7L._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/71cKBKc+SrL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/71GMtNr13QL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="itemm" style="background-image: url('https://m.media-amazon.com/images/I/51moq1JqaaL._AC_SY200_.jpg');background-position: center center;"></div>
+                    </div>
+                </div>
+                <!-- This is "Home Decor Under $20" List -->
+                <div class="scrolling-list">
+                    <div class="scroll-head">
+                        <div class="scrollhead1">
+                            <p>Home Decor Under $20</p>
+                        </div> 
+                        <div class="scrollhead2">
+                            <a href="" class="scrollhead2">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="item-a" style="background-image: url('https://m.media-amazon.com/images/I/612NJSPRrLL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-b" style="background-image: url('https://m.media-amazon.com/images/I/71kENaxQixL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-c" style="background-image: url('https://m.media-amazon.com/images/I/61XYX1tzoTL._AC_SY200_.jpg');background-position: center center; background-size:cover ;"></div>
+                        <div class="item-d" style="background-image: url('https://m.media-amazon.com/images/I/61wUpyw9cIL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-e" style="background-image: url('https://m.media-amazon.com/images/I/81AOpcqJfHL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-f" style="background-image: url('https://m.media-amazon.com/images/I/71lYwpEFaqL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-g" style="background-image: url('https://m.media-amazon.com/images/I/71dcYplfvsS._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-h" style="background-image: url('https://m.media-amazon.com/images/I/51lFr88wxML._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-i" style="background-image: url('https://m.media-amazon.com/images/I/71vuZisPpYL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-j" style="background-image: url('https://m.media-amazon.com/images/I/710xU17suIL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-k" style="background-image: url('https://m.media-amazon.com/images/I/612xTdtHVfL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-l" style="background-image: url('https://m.media-amazon.com/images/I/71Mda9UuJhL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-m" style="background-image: url('https://m.media-amazon.com/images/I/61dhzAmqvOL._AC_SY200_.jpg');background-position: center center;"></div>
+                        <div class="item-n" style="background-image: url('https://m.media-amazon.com/images/I/61XwmZLvaNL._AC_SY200_.jpg');background-position: center center;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="stupid-container"></div>
+            <div class="last-list">
+                <!-- don't take this text seriously -->
+                <p class="hidden-text">msndbfhsbchjcba</p>
+                <!-- don't take this text seriously -->
+                <div class="inlast-list">
+                    <div class="signin-cont">
+                        <div class="signin-head">
+                            <p style="font-size: 13px;">See personalized recommendations</p>
+                        </div>
+                        <button type="button" class="sign-in-button">Sign in</button>
+                        <p style="font-size: 11px;margin-top: 6px;">New Customer? <span><a href="" style="text-decoration: none;color: #007185;" class="start-here">Start here.</a></span></p>
+                     </div>
+                </div>
+            </div>
+            <div class="back-to-top">
+                Back to top
+            </div>
+            <div class="navfoot1">
+                <div class="container-1">
+                    <div class="navfoot-colhead">
+                        Get to Know Us
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Careers</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Blog</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">About Amazon</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Investor Relations</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Amazon Devices</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Amazon Science</a>
+                    </div>
+                </div>
+                <div class="container-2 links">
+                    <div class="navfoot-colhead">
+                        Make Money With US
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Sell products on Amazon</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Sell on Amazon Business</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Sell apps on Amazon</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Become an affliate</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Advertise on Products</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Self-Publish with Us</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Host an Amazon Hub</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">> See More Make Money <br> with Us</a>
+                    </div>
+                </div>
+                <div class="container-3 links">
+                    <div class="navfoot-colhead">
+                        Amazon Payment Products
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Amazon Business Card<a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Shop with Points</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Reload Your Balance</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Amazon Currency Converter</a>
+                    </div>
+                </div>
+                <div class="container-4 links">
+                    <div class="navfoot-colhead">
+                        Let Us Help You
+                    </div>
+                    <div class="navfoot-link1">
+                        <a href="" class="link-mama">Amazon and COVID- <br>19<a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Your Account</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Your Orders</a>
+                    </div>
+                    <div class="navfoot-link1">
+                        <a href="" class="link-mama">Shipping Rates & Policies</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Returns & Replacements<a>
+                    </div>
+                    <div class="navfoot-link1">
+                        <a href="" class="link-mama">Manage your Content and Devices</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Amazon Assistant</a>
+                    </div>
+                    <div class="navfoot-link">
+                        <a href="" class="link-mama">Help</a>
+                    </div>
+                </div>
+            </div>
+            <hr style="color: gray;">
+            <div class="navfoot2">
+                <div class="amazon-logo">
+                    <img src="https://res.cloudinary.com/dcxmdgjwb/image/upload/v1703261526/last%20amazon.png" class="img-mama" alt="">
+                </div>  
+                <div class="nationality">
+                    <div class="language">
+                        <div class="globe-logo">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="english">
+                            English
+                        </div>
+                        <div class="up-down">
+                            <i class="fa-solid fa-up-down"></i>
+                        </div>
+                    </div>
+                    <div class="currency">
+                        <div class="dollar-logo">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <div class="dollarusd">
+                            USD - U.S. Dollar
+                        </div>
+                    </div>
+                    <div class="usflag">
+                            <div class="usflag-logo">
+                                <i class="fa-solid fa-flag-usa"></i>
+                            </div>
+                            <div class="usflag-data">
+                                United States
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="navfoot3">
+               <table>
+                <tr>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> Amazon Music
+                        <br>
+                        <span class="navfootdesctext">
+                            Stream millions
+                            <br>
+                            of songs
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> Amazon Ads
+                        <br>
+                        <span class="navfootdesctext">
+                            Reach Customers
+                            <br>
+                            wherever they
+                            <br>
+                            spend their time
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> 6pm
+                        <br>
+                        <span class="navfootdesctext">
+                            Score deals
+                            <br>
+                            on fashion
+                            <br>
+                            brands
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> AbeBooks
+                        <br>
+                        <span class="navfootdesctext">
+                            Books, art
+                            <br>
+                            & collections
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-aa"> ACX
+                        <br>
+                        <span class="navfootdesctext">
+                            Audiobook publishing
+                            <br>
+                            Made Easy
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> Sell on Amazon
+                        <br>
+                        <span class="navfootdesctext">
+                            Start a Selling
+                            <br>
+                            Account
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> Amazon <br> Business
+                        <br>
+                        <span class="navfootdesctext">
+                            Everything
+                            <br>
+                            For 
+                            <br>
+                            Your <br>
+                            Business
+                        </span>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="navfootdescspacerow"></tr>
+                <tr>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> AmazonGlobal
+                        <br>
+                        <span class="navfootdesctext">
+                            Ship Orders
+                            <br>
+                            Internationally
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a">Home Services
+                        <br>
+                        <span class="navfootdesctext">
+                            Experienced Pros
+                            <br>
+                            happiness
+                            <br>
+                            Guarantee
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> Amazon Web <br> Services
+                        <br>
+                        <span class="navfootdesctext">
+                            Scalable Cloud
+                            <br>
+                            Computing
+                            <br>
+                            Services
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> Audible
+                        <br>
+                        <span class="navfootdesctext">
+                            Listen to Books &
+                            <br>
+                            Original
+                            <br>
+                            Audio
+                            <br>
+                            Performances
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-aa">Box Office Mojo
+                        <br>
+                        <span class="navfootdesctext">
+                            Find Movie
+                            <br>
+                            Box Office Data
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> Goodreads
+                        <br>
+                        <span class="navfootdesctext">
+                            Book reviews
+                            <br>
+                            &
+                            <br>
+                            recommendations
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> IMDb
+                        <br>
+                        <span class="navfootdesctext">
+                            Movies, TV
+                            <br>
+                            & Celebrities
+                        </span>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="navfootdescspacerow"></tr>
+                <tr>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> IMDbPro
+                        <br>
+                        <span class="navfootdesctext">
+                            Get Info
+                            <br>
+                            Entertainment
+                            <br>
+                            Professionals
+                            <br>
+                            Need
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a">Kindle Direct <br> Publishing
+                        <br>
+                        <span class="navfootdesctext">
+                            Indie Digital & 
+                            <br>
+                            Print Publsihing
+                            <br>
+                            Made Easy
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> Prime Video <br> Direct
+                        <br>
+                        <span class="navfootdesctext">
+                            Video
+                            <br>
+                            Distribution
+                            <br>
+                            Made Easy
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> Shopbop
+                        <br>
+                        <span class="navfootdesctext">
+                            Designer
+                            <br>
+                            Fashion Brands
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-aa">Woot!
+                        <br>
+                        <span class="navfootdesctext">
+                            Deals and
+                            <br>
+                            Shenanigans
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> Zappos
+                        <br>
+                        <span class="navfootdesctext">
+                            Shoes &
+                            <br>
+                            Clothing
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> Ring
+                        <br>
+                        <span class="navfootdesctext">
+                            Smart Home
+                            <br>
+                            Security
+                            <br>
+                            Systems
+                        </span>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="navfootdescspacerow"></tr>
+                <tr>
+                    <td class="navfootdescitem">
+                        <br>
+                        <span class="navfootdesctext">
+                            <br>
+                            <br>
+                            <br>
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a">eero wifi
+                        <br>
+                        <span class="navfootdesctext">
+                            Stream 4k Video
+                            <br>
+                            In Every Room
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a"> Blink
+                        <br> 
+                        <span class="navfootdesctext">
+                           Smart Security
+                            <br>
+                            for Every
+                            <br>
+                            Home
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-aa">Neighbours App
+                        <br>
+                        <span class="navfootdesctext">
+                            Real-Time Crime
+                            <br>
+                            & Safety Alerts
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-aa">Amazon Subscription <br>Boxes
+                        <br>
+                        <span class="navfootdesctext">
+                            Top subscription boxes
+                            <br>
+                            -right to your door
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-aa">PillPack
+                        <br>
+                        <span class="navfootdesctext">
+                            Pharmacy
+                            <br>
+                            Simplified
+                        </span>
+                        </a>
+                    </td>
+                    <td class="navfootdescspace"></td>
+                    <td class="navfootdescitem">
+                        <a href="" class="nav-a">
+                        <br>
+                        <span class="navfootdesctext">
+                            <br>
+                            <br>
+                        </span>
+                        </a>
+                    </td>
+                    
+                </tr>
+               </table>
+            </div>
+            <div class="navfoot4">
+                <div class="firstrow-text">
+                    <div class="conditions">
+                        Conditions of Use
+                    </div>
+                    <div class="conditions">
+                        Privacy Notice
+                    </div>
+                    <div class="conditions">
+                        Your Ads Choices
+                    </div>
+                </div>
+                <div class="secondrow-text">
+                    © 1996-2024, Amazon.com, Inc. or its affiliates
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+</html>
